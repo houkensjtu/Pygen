@@ -36,8 +36,8 @@ omega_C = 48
 
 print("sigma=%f, omega_C=%f" %(sigma,omega_C))
 
-nT = 3000
-nX = 3000
+nT = 800
+nX = 800
 
 # Basic data container for gas and mesh
 Tg = np.zeros((nT,nX))
