@@ -12,7 +12,7 @@ Tc = 80
 # Basic data container for gas and mesh
 Tg = np.zeros((nT,nX))
 Tm = np.zeros((nT,nX))
-#def fuckup(sigma, omega_C, nT, nX):
+
 dT = 1/nT
 dX = 1/nX
 sigma = 20000
