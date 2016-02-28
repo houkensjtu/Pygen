@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy.linalg import inv
 
-def fuckup(sigma, omega_C, nT, nX):
+def regenerator(sigma, omega_C, nT, nX):
     # Time and space division
     Th = 300
     Tc = 80
@@ -65,4 +65,4 @@ sigma = h*Ah*l/(w*Cp_g)
 omega_C = h*Ah*tr/(rho_m*Cm)
 print("sigma=%f, omega_C=%f" %(sigma,omega_C))
 for i in range(1,30,1):
-    fuckup(sigma,omega_C*i/20,500,500)
+    regenerator(sigma,omega_C*i/20,500,500)
