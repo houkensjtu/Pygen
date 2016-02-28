@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from numpy.linalg import inv
 
-def fuckup(Th, Tc, sigma, omega_C, nT, nX, Tg, Tm, effi_A):
+def regenerator(Th, Tc, sigma, omega_C, nT, nX, Tg, Tm, effi_A):
     dT = 1/nT
     dX = 1/nX
 
@@ -55,7 +55,7 @@ Tm[0,:] = np.linspace(Th,Tc,nX)
 # Boundary cond. for mesh
 for i in range(0,nT-1):
     Tm[i+1,0] = Tm[i,0] - par_b*(Tm[i,0] - Tg[i,0])
-fuckup(Th,Tc,sigma,omega_C,nT,nX,Tg,Tm,effi_A)
+regenerator(Th,Tc,sigma,omega_C,nT,nX,Tg,Tm,effi_A)
 
 for bb in range(0,30,1):
     Tg = np.flipud(np.fliplr(Tg))
@@ -67,7 +67,7 @@ for bb in range(0,30,1):
 #    Tg[0,:] = np.linspace(Th,Tc,nX)
     for i in range(0,nT-1):
         Tm[i+1,0] = Tm[i,0] - par_b*(Tm[i,0] - Tg[i,0])
-    fuckup(Th,Tc,sigma,omega_C,nT,nX,Tg,Tm,effi_A)
+    regenerator(Th,Tc,sigma,omega_C,nT,nX,Tg,Tm,effi_A)
 
 for i in range(0,nT-1,10):
     plt.plot(np.linspace(0,1,nX),Tm[i,:],'b',np.linspace(0,1,nX),Tg[i,:],'r')
